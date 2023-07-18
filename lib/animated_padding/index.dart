@@ -20,7 +20,7 @@ class _AnimatedPaddingTestState extends State<AnimatedPaddingTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AnimatedContainer'),
+        title: const Text('AnimatedPadding'),
       ),
       body: AnimatedPadding(
         duration: const Duration(seconds: 1),

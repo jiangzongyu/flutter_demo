@@ -3,6 +3,8 @@ import './animated_switcher/index.dart';
 import './animated_cross_fade/index.dart';
 import './animated_padding/index.dart';
 import './tween_animation_builder/index.dart';
+import './scroll_num/index.dart';
+import './rotation_transition/index.dart';
 
 List routerList = [
   {
@@ -24,5 +26,13 @@ List routerList = [
   {
     'name': 'TweenAnimationBuilder',
     'method': const TweenAnimationBuilderTest(),
+  },
+  {
+    'name': 'scrollNum示例',
+    'method': const ScrollNum(),
+  },
+  {
+    'name': 'RotationTransition',
+    'method': const RotationTransitionTest(),
   }
 ];

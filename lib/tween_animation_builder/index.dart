@@ -21,7 +21,7 @@ class _TweenAnimationBuilderTestState extends State<TweenAnimationBuilderTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AnimatedContainer'),
+        title: const Text('TweenAnimationBuilder'),
       ),
       body: Center(
         child: TweenAnimationBuilder(
