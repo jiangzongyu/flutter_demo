@@ -5,6 +5,8 @@ import './animated_padding/index.dart';
 import './tween_animation_builder/index.dart';
 import './scroll_num/index.dart';
 import './rotation_transition/index.dart';
+import './rotation_fade_opacity/index.dart';
+import './slide_transition/index.dart';
 
 List routerList = [
   {
@@ -34,5 +36,13 @@ List routerList = [
   {
     'name': 'RotationTransition',
     'method': const RotationTransitionTest(),
+  },
+  {
+    'name': 'Rotation/Fade/Opacity',
+    'method': const TransitionTest(),
+  },
+  {
+    'name': 'SlideTransition',
+    'method': const SlideTransitionTest(),
   }
 ];
