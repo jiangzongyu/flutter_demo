@@ -7,6 +7,7 @@ import './scroll_num/index.dart';
 import './rotation_transition/index.dart';
 import './rotation_fade_opacity/index.dart';
 import './slide_transition/index.dart';
+import './interlace_animation/index.dart';
 
 List routerList = [
   {
@@ -44,5 +45,9 @@ List routerList = [
   {
     'name': 'SlideTransition',
     'method': const SlideTransitionTest(),
+  },
+  {
+    'name': '交错动画',
+    'method': const InterlaceAnimation(),
   }
 ];
