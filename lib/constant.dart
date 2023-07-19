@@ -9,6 +9,7 @@ import './rotation_fade_opacity/index.dart';
 import './slide_transition/index.dart';
 import './interlace_animation/index.dart';
 import './animated_builder/index.dart';
+import './breathing_animation/index.dart';
 
 List routerList = [
   {
@@ -54,5 +55,9 @@ List routerList = [
   {
     'name': 'AnimatedBuilder',
     'method': const AnimatedBuilderTest(),
+  },
+  {
+    'name': '478呼吸动画',
+    'method': const BreathingAnimation(),
   }
 ];
