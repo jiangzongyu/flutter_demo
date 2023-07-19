@@ -8,6 +8,7 @@ import './rotation_transition/index.dart';
 import './rotation_fade_opacity/index.dart';
 import './slide_transition/index.dart';
 import './interlace_animation/index.dart';
+import './animated_builder/index.dart';
 
 List routerList = [
   {
@@ -49,5 +50,9 @@ List routerList = [
   {
     'name': '交错动画',
     'method': const InterlaceAnimation(),
+  },
+  {
+    'name': 'AnimatedBuilder',
+    'method': const AnimatedBuilderTest(),
   }
 ];
