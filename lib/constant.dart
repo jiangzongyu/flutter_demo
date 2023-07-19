@@ -10,6 +10,7 @@ import './slide_transition/index.dart';
 import './interlace_animation/index.dart';
 import './animated_builder/index.dart';
 import './breathing_animation/index.dart';
+import './hero/index.dart';
 
 List routerList = [
   {
@@ -59,5 +60,9 @@ List routerList = [
   {
     'name': '478呼吸动画',
     'method': const BreathingAnimation(),
+  },
+  {
+    'name': 'Hero',
+    'method': const HeroTest(),
   }
 ];
