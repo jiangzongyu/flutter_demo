@@ -16,9 +16,10 @@ class HeroTest extends StatelessWidget {
           final path = 'assets/${index + 1}.jpeg';
           return GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return DetailScreen(path: path);
-              }));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => DetailScreen(path: path)),
+              );
             },
             child: Hero(
               tag: path,

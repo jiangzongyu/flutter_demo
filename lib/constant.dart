@@ -11,6 +11,7 @@ import './interlace_animation/index.dart';
 import './animated_builder/index.dart';
 import './breathing_animation/index.dart';
 import './hero/index.dart';
+import './custom_painter/index.dart';
 
 List routerList = [
   {
@@ -64,5 +65,9 @@ List routerList = [
   {
     'name': 'Hero',
     'method': const HeroTest(),
+  },
+  {
+    'name': 'CustomPainter',
+    'method': const CustomPainterTest(),
   }
 ];
