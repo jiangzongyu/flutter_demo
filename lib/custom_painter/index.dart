@@ -50,9 +50,10 @@ class MyPainter extends CustomPainter {
     print(size);
     canvas.drawCircle(size.center(Offset(0.0, 90.0)), 50.0, Paint());
     canvas.drawOval(
-        Rect.fromCenter(
-            center: size.center(Offset(0, 250)), width: 200, height: 250),
-        Paint());
+      Rect.fromCenter(
+          center: size.center(Offset(0, 250)), width: 200, height: 250),
+      Paint(),
+    );
   }
 
   @override
