@@ -13,6 +13,7 @@ class CustomPainterTest extends StatefulWidget {
 class _CustomPainterTestState extends State<CustomPainterTest>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  final List<Snowflake> _snowflake = List.generate(100, (index) => Snowflake());
 
   @override
   void initState() {
@@ -31,8 +32,6 @@ class _CustomPainterTestState extends State<CustomPainterTest>
 
   @override
   Widget build(BuildContext context) {
-    List<Snowflake> _snowflake = List.generate(100, (index) => Snowflake());
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('CustomPainter&雪人'),
