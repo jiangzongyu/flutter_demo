@@ -43,7 +43,7 @@ class _CustomPainterTestState extends State<CustomPainterTest>
           color: Colors.blue,
           child: AnimatedBuilder(
             animation: _controller,
-            builder: (BuildContext context, Widget? child) {
+            builder: (_, __) {
               for (var element in _snowflake) {
                 element.fall();
               }
@@ -65,7 +65,7 @@ class MyPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print(size);
+    // print(size);
     final whitePaint = Paint()..color = Colors.white;
     canvas.drawCircle(
       size.center(const Offset(0.0, 90.0)),
