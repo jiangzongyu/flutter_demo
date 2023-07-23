@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // 操作底层CustomPainter
@@ -15,7 +17,10 @@ class _CustomPainterTestState extends State<CustomPainterTest>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat();
   }
 
   @override
@@ -26,17 +31,27 @@ class _CustomPainterTestState extends State<CustomPainterTest>
 
   @override
   Widget build(BuildContext context) {
+    List<Snowflake> _snowflake = List.generate(100, (index) => Snowflake());
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CustomPainter'),
+        title: const Text('CustomPainter&雪人'),
       ),
       body: Center(
         child: Container(
           width: double.infinity,
           height: double.infinity,
           color: Colors.blue,
-          child: CustomPaint(
-            painter: MyPainter(),
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (BuildContext context, Widget? child) {
+              for (var element in _snowflake) {
+                element.fall();
+              }
+              return CustomPaint(
+                painter: MyPainter(_snowflake),
+              );
+            },
           ),
         ),
       ),
@@ -45,17 +60,53 @@ class _CustomPainterTestState extends State<CustomPainterTest>
 }
 
 class MyPainter extends CustomPainter {
+  late final List<Snowflake> _snowflake;
+
+  MyPainter(this._snowflake);
+
   @override
   void paint(Canvas canvas, Size size) {
     print(size);
-    canvas.drawCircle(size.center(Offset(0.0, 90.0)), 50.0, Paint());
+    final whitePaint = Paint()..color = Colors.white;
+    canvas.drawCircle(
+      size.center(const Offset(0.0, 90.0)),
+      50.0,
+      whitePaint,
+    );
     canvas.drawOval(
       Rect.fromCenter(
-          center: size.center(Offset(0, 250)), width: 200, height: 250),
-      Paint(),
+        center: size.center(const Offset(0, 250)),
+        width: 200,
+        height: 250,
+      ),
+      whitePaint,
     );
+    for (var snowflake in _snowflake) {
+      canvas.drawCircle(
+        Offset(snowflake.x, snowflake.y),
+        snowflake.radius,
+        whitePaint,
+      );
+    }
   }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+class Snowflake {
+  double x = Random().nextDouble() * 400;
+  double y = Random().nextDouble() * 800;
+  double radius = Random().nextDouble() * 2 + 2;
+  double velocity = Random().nextDouble() * 4 + 2;
+
+  fall() {
+    y += velocity;
+    if (y > 800) {
+      y = 0;
+      x = Random().nextDouble() * 400;
+      radius = Random().nextDouble() * 2 + 2;
+      velocity = Random().nextDouble() * 4 + 2;
+    }
+  }
 }

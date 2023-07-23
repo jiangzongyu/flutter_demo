@@ -1,17 +1,17 @@
+import './animated_builder/index.dart';
 import './animated_container/index.dart';
-import './animated_switcher/index.dart';
 import './animated_cross_fade/index.dart';
 import './animated_padding/index.dart';
-import './tween_animation_builder/index.dart';
-import './scroll_num/index.dart';
-import './rotation_transition/index.dart';
-import './rotation_fade_opacity/index.dart';
-import './slide_transition/index.dart';
-import './interlace_animation/index.dart';
-import './animated_builder/index.dart';
+import './animated_switcher/index.dart';
 import './breathing_animation/index.dart';
-import './hero/index.dart';
 import './custom_painter/index.dart';
+import './hero/index.dart';
+import './interlace_animation/index.dart';
+import './rotation_fade_opacity/index.dart';
+import './rotation_transition/index.dart';
+import './scroll_num/index.dart';
+import './slide_transition/index.dart';
+import './tween_animation_builder/index.dart';
 
 List routerList = [
   {
@@ -67,7 +67,7 @@ List routerList = [
     'method': const HeroTest(),
   },
   {
-    'name': 'CustomPainter',
+    'name': 'CustomPainter&雪人',
     'method': const CustomPainterTest(),
   }
 ];
