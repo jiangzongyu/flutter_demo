@@ -7,6 +7,7 @@ import './breathing_animation/index.dart';
 import './custom_painter/index.dart';
 import './hero/index.dart';
 import './interlace_animation/index.dart';
+import './rive/index.dart';
 import './rotation_fade_opacity/index.dart';
 import './rotation_transition/index.dart';
 import './scroll_num/index.dart';
@@ -69,5 +70,9 @@ List routerList = [
   {
     'name': 'CustomPainter&雪人',
     'method': const CustomPainterTest(),
+  },
+  {
+    'name': 'rive插件',
+    'method': const RiveTest(),
   }
 ];
