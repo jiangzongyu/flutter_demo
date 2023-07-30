@@ -15,6 +15,7 @@ import './rotation_transition/index.dart';
 import './scroll_num/index.dart';
 import './slide_transition/index.dart';
 import './tween_animation_builder/index.dart';
+import './ultimate_drag_game/index.dart';
 
 List routerList = [
   {
@@ -84,5 +85,9 @@ List routerList = [
   {
     'name': '自定义拖拽颜色游戏',
     'method': const CustomDrag(),
+  },
+  {
+    'name': '终极版拖拽颜色游戏',
+    'method': const UltimateDrag(),
   }
 ];
