@@ -93,6 +93,6 @@ List routerList = [
   },
   {
     'name': 'ListView',
-    'method': const ListViewTest(),
+    'method': ListViewTest(),
   }
 ];
