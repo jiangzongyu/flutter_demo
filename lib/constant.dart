@@ -8,6 +8,7 @@ import './custom_drag_game/index.dart';
 import './custom_painter/index.dart';
 import './hero/index.dart';
 import './interlace_animation/index.dart';
+import './list_view/index.dart';
 import './reorderable_list_view/index.dart';
 import './rive/index.dart';
 import './rotation_fade_opacity/index.dart';
@@ -89,5 +90,9 @@ List routerList = [
   {
     'name': '终极版拖拽颜色游戏',
     'method': const UltimateDrag(),
+  },
+  {
+    'name': 'ListView',
+    'method': const ListViewTest(),
   }
 ];
