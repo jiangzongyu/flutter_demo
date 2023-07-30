@@ -4,9 +4,11 @@ import './animated_cross_fade/index.dart';
 import './animated_padding/index.dart';
 import './animated_switcher/index.dart';
 import './breathing_animation/index.dart';
+import './custom_drag_game/index.dart';
 import './custom_painter/index.dart';
 import './hero/index.dart';
 import './interlace_animation/index.dart';
+import './reorderable_list_view/index.dart';
 import './rive/index.dart';
 import './rotation_fade_opacity/index.dart';
 import './rotation_transition/index.dart';
@@ -74,5 +76,13 @@ List routerList = [
   {
     'name': 'rive插件',
     'method': const RiveTest(),
+  },
+  {
+    'name': 'ReorderableListView拖拽颜色游戏',
+    'method': const ReorderableListViewTest(),
+  },
+  {
+    'name': '自定义拖拽颜色游戏',
+    'method': const CustomDrag(),
   }
 ];
