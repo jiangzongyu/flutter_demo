@@ -6,7 +6,7 @@ class ListViewTest extends StatelessWidget {
   final _controller = ScrollController();
 
   _incrementCounter() {
-    print(_controller.position);
+    // print(_controller.position);
     _controller.animateTo(
       _controller.offset + 200,
       duration: const Duration(milliseconds: 300),

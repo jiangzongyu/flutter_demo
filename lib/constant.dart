@@ -1,3 +1,5 @@
+import 'package:flutter_jiang_demo/scroll_refresh/index.dart';
+
 import './animated_builder/index.dart';
 import './animated_container/index.dart';
 import './animated_cross_fade/index.dart';
@@ -94,5 +96,9 @@ List routerList = [
   {
     'name': 'ListView',
     'method': ListViewTest(),
+  },
+  {
+    'name': '下拉&刷新',
+    'method': ScrollRefresh(),
   }
 ];
