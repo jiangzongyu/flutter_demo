@@ -1,3 +1,4 @@
+import 'package:flutter_jiang_demo/dismissible/index.dart';
 import 'package:flutter_jiang_demo/scroll_refresh/index.dart';
 
 import './animated_builder/index.dart';
@@ -100,5 +101,9 @@ List routerList = [
   {
     'name': '下拉&刷新',
     'method': ScrollRefresh(),
+  },
+  {
+    'name': 'dismissible',
+    'method': const DismissibleTest(),
   }
 ];
