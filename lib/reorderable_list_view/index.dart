@@ -31,6 +31,7 @@ class _ReorderableListViewTestState extends State<ReorderableListViewTest> {
       ),
       body: Center(
         child: ReorderableListView(
+          header: Text('ReorderableListView'),
           onReorder: (int oldIndex, int newIndex) {
             print('move $oldIndex to $newIndex');
             if (newIndex > oldIndex) newIndex--;

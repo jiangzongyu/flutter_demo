@@ -8,15 +8,19 @@ import 'custom_drag_game/index.dart';
 import 'custom_painter/index.dart';
 import 'dismissible/index.dart';
 import 'dynamic_state/index.dart';
+import 'grid_view/index.dart';
 import 'hero/index.dart';
 import 'interlace_animation/index.dart';
 import 'list_view/index.dart';
+import 'list_wheel/index.dart';
+import 'page_view/index.dart';
 import 'reorderable_list_view/index.dart';
 import 'rive/index.dart';
 import 'rotation_fade_opacity/index.dart';
 import 'rotation_transition/index.dart';
 import 'scroll_num/index.dart';
 import 'scroll_refresh/index.dart';
+import 'single_child_scroll_view/index.dart';
 import 'slide_transition/index.dart';
 import 'tween_animation_builder/index.dart';
 import 'ultimate_drag_game/index.dart';
@@ -83,7 +87,7 @@ List routerList = [
     'method': const RiveTest(),
   },
   {
-    'name': 'ReorderableListView拖拽颜色游戏',
+    'name': 'ReorderableListView拖拽颜色',
     'method': const ReorderableListViewTest(),
   },
   {
@@ -109,5 +113,21 @@ List routerList = [
   {
     'name': 'GitHub最新动态',
     'method': const DynamicState(),
+  },
+  {
+    'name': 'GridViewTest',
+    'method': const GridViewTest(),
+  },
+  {
+    'name': 'ListWheelScrollView',
+    'method': const ListWheel(),
+  },
+  {
+    'name': 'PageView',
+    'method': const PageViewTest(),
+  },
+  {
+    'name': 'SingleChildScrollView',
+    'method': const SingleChildScrollViewTest(),
   }
 ];
