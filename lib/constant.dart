@@ -1,25 +1,25 @@
-import 'package:flutter_jiang_demo/dismissible/index.dart';
-import 'package:flutter_jiang_demo/scroll_refresh/index.dart';
-
-import './animated_builder/index.dart';
-import './animated_container/index.dart';
-import './animated_cross_fade/index.dart';
-import './animated_padding/index.dart';
-import './animated_switcher/index.dart';
-import './breathing_animation/index.dart';
-import './custom_drag_game/index.dart';
-import './custom_painter/index.dart';
-import './hero/index.dart';
-import './interlace_animation/index.dart';
-import './list_view/index.dart';
-import './reorderable_list_view/index.dart';
-import './rive/index.dart';
-import './rotation_fade_opacity/index.dart';
-import './rotation_transition/index.dart';
-import './scroll_num/index.dart';
-import './slide_transition/index.dart';
-import './tween_animation_builder/index.dart';
-import './ultimate_drag_game/index.dart';
+import 'animated_builder/index.dart';
+import 'animated_container/index.dart';
+import 'animated_cross_fade/index.dart';
+import 'animated_padding/index.dart';
+import 'animated_switcher/index.dart';
+import 'breathing_animation/index.dart';
+import 'custom_drag_game/index.dart';
+import 'custom_painter/index.dart';
+import 'dismissible/index.dart';
+import 'dynamic_state/index.dart';
+import 'hero/index.dart';
+import 'interlace_animation/index.dart';
+import 'list_view/index.dart';
+import 'reorderable_list_view/index.dart';
+import 'rive/index.dart';
+import 'rotation_fade_opacity/index.dart';
+import 'rotation_transition/index.dart';
+import 'scroll_num/index.dart';
+import 'scroll_refresh/index.dart';
+import 'slide_transition/index.dart';
+import 'tween_animation_builder/index.dart';
+import 'ultimate_drag_game/index.dart';
 
 List routerList = [
   {
@@ -105,5 +105,9 @@ List routerList = [
   {
     'name': 'dismissible',
     'method': const DismissibleTest(),
+  },
+  {
+    'name': 'GitHub最新动态',
+    'method': const DynamicState(),
   }
 ];
