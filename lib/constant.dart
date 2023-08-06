@@ -9,6 +9,7 @@ import 'custom_painter/index.dart';
 import 'dismissible/index.dart';
 import 'dynamic_state/index.dart';
 import 'future/index.dart';
+import 'future_builder/index.dart';
 import 'grid_view/index.dart';
 import 'hero/index.dart';
 import 'interlace_animation/index.dart';
@@ -134,5 +135,9 @@ List routerList = [
   {
     'name': 'Future事件循环机制',
     'method': const FutureTest(),
+  },
+  {
+    'name': 'FutureBuilder',
+    'method': const FutureBuilderTest(),
   }
 ];
