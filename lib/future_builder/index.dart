@@ -36,6 +36,7 @@ class FutureBuilderTest extends StatelessWidget {
             // throw "should not happen";
             //   第二种写法
             if (snapshot.hasError) {
+              print("${snapshot.error}");
               return const Icon(
                 Icons.error,
                 size: 80,

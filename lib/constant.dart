@@ -24,6 +24,7 @@ import 'scroll_num/index.dart';
 import 'scroll_refresh/index.dart';
 import 'single_child_scroll_view/index.dart';
 import 'slide_transition/index.dart';
+import 'stream/index.dart';
 import 'tween_animation_builder/index.dart';
 import 'ultimate_drag_game/index.dart';
 
@@ -139,5 +140,9 @@ List routerList = [
   {
     'name': 'FutureBuilder',
     'method': const FutureBuilderTest(),
+  },
+  {
+    'name': 'Stream',
+    'method': const StreamTest(),
   }
 ];
