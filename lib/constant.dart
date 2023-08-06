@@ -12,6 +12,7 @@ import 'future/index.dart';
 import 'future_builder/index.dart';
 import 'grid_view/index.dart';
 import 'hero/index.dart';
+import 'input_game/index.dart';
 import 'interlace_animation/index.dart';
 import 'list_view/index.dart';
 import 'list_wheel/index.dart';
@@ -144,5 +145,9 @@ List routerList = [
   {
     'name': 'Stream',
     'method': const StreamTest(),
+  },
+  {
+    'name': 'Stream输入数字游戏',
+    'method': const InputGame(),
   }
 ];
