@@ -11,19 +11,20 @@ class InputGame extends StatefulWidget {
 }
 
 class _InputGameState extends State<InputGame> {
-  final StreamController<int> _controller = StreamController.broadcast();
+  final StreamController<int> _inputController = StreamController.broadcast();
+  final StreamController<int> _scoreController = StreamController.broadcast();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: StreamBuilder(
-          stream: _controller.stream,
+          stream: _scoreController.stream.transform(TallyTransformer()),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Text('${snapshot.data}');
+              return Text('Score: ${snapshot.data}');
             }
-            return Text('waitting');
+            return Text('Score: 0');
           },
         ),
       ),
@@ -31,11 +32,17 @@ class _InputGameState extends State<InputGame> {
         children: [
           ...List.generate(
             5,
-            (index) => Puzzle(inputStream: _controller.stream),
+            (index) => Puzzle(
+              inputStream: _inputController.stream,
+              scoreStream: _scoreController,
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: KeyPad(controller: _controller),
+            child: KeyPad(
+              inputController: _inputController,
+              scoreController: _scoreController,
+            ),
           ),
         ],
       ),
@@ -43,10 +50,29 @@ class _InputGameState extends State<InputGame> {
   }
 }
 
+class TallyTransformer implements StreamTransformer<int, dynamic> {
+  int sum = 0;
+  final StreamController _controller = StreamController();
+
+  @override
+  Stream bind(Stream stream) {
+    stream.listen((event) {
+      sum += event as int;
+      _controller.add(sum);
+    });
+    return _controller.stream;
+  }
+
+  @override
+  StreamTransformer<RS, RT> cast<RS, RT>() => StreamTransformer.castFrom(this);
+}
+
 class Puzzle extends StatefulWidget {
   final Stream<int> inputStream;
+  final StreamController<int> scoreStream;
 
-  const Puzzle({super.key, required this.inputStream});
+  const Puzzle(
+      {super.key, required this.inputStream, required this.scoreStream});
 
   @override
   State<Puzzle> createState() => _PuzzleState();
@@ -59,33 +85,35 @@ class _PuzzleState extends State<Puzzle> with SingleTickerProviderStateMixin {
 
   late final AnimationController _controller;
 
-  reset() {
+  reset([form = 0.0]) {
     a = Random().nextInt(5) + 1;
     b = Random().nextInt(5);
     x = Random().nextDouble() * 300;
     _controller.duration =
-        Duration(milliseconds: Random().nextInt(5000) + 5000);
+        Duration(milliseconds: Random().nextInt(5000) + 10000);
     color = Colors.primaries[Random().nextInt(Colors.primaries.length)][200];
+
+    _controller.forward(from: form);
   }
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 1))
-          ..forward();
-    reset();
-    _controller.forward(from: Random().nextDouble());
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    reset(Random().nextDouble());
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         reset();
-        _controller.forward(from: 0.0);
+        widget.scoreStream.add(-3);
       }
     });
 
     widget.inputStream.listen((int event) {
       if (event == a + b) {
         reset();
-        _controller.forward(from: 0.0);
+        widget.scoreStream.add(5);
       }
     });
     super.initState();
@@ -107,7 +135,7 @@ class _PuzzleState extends State<Puzzle> with SingleTickerProviderStateMixin {
           top: _controller.value * 800 - 100,
           child: Container(
             decoration: BoxDecoration(
-              color: color,
+              color: color?.withOpacity(0.5),
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(24),
             ),
@@ -124,9 +152,14 @@ class _PuzzleState extends State<Puzzle> with SingleTickerProviderStateMixin {
 
 // 键盘
 class KeyPad extends StatelessWidget {
-  final StreamController controller;
+  final StreamController inputController;
+  final StreamController scoreController;
 
-  const KeyPad({super.key, required this.controller});
+  const KeyPad({
+    super.key,
+    required this.inputController,
+    required this.scoreController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +174,8 @@ class KeyPad extends StatelessWidget {
       children: List.generate(9, (index) {
         return TextButton(
           onPressed: () {
-            controller.add(index + 1);
+            inputController.add(index + 1);
+            scoreController.add(-2);
           },
           style: TextButton.styleFrom(
             backgroundColor: Colors.primaries[index][200],
@@ -149,7 +183,7 @@ class KeyPad extends StatelessWidget {
           ),
           child: Text(
             "${index + 1}",
-            style: TextStyle(fontSize: 24, color: Colors.black),
+            style: const TextStyle(fontSize: 24, color: Colors.black),
           ),
         );
       }),
