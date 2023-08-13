@@ -25,6 +25,11 @@ import 'scroll_num/index.dart';
 import 'scroll_refresh/index.dart';
 import 'single_child_scroll_view/index.dart';
 import 'slide_transition/index.dart';
+import 'sliver_demo/index.dart';
+import 'slivers-2/index.dart';
+import 'slivers/index.dart';
+import 'slivers_app_bar/index.dart';
+import 'slivers_other/index.dart';
 import 'stream/index.dart';
 import 'tween_animation_builder/index.dart';
 import 'ultimate_drag_game/index.dart';
@@ -149,5 +154,25 @@ List routerList = [
   {
     'name': 'Stream输入数字游戏',
     'method': const InputGame(),
+  },
+  {
+    'name': '走进Slivers的世界',
+    'method': const SliversTest(),
+  },
+  {
+    'name': '走进Slivers的世界2',
+    'method': const SliversTest2(),
+  },
+  {
+    'name': 'SliversAppBar',
+    'method': const SliversAppBarTest(),
+  },
+  {
+    'name': 'Slivers更多组件',
+    'method': const SliversOther(),
+  },
+  {
+    'name': 'SliversDemo',
+    'method': const SliverDemo(),
   }
 ];
