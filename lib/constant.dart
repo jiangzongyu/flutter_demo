@@ -4,6 +4,7 @@ import 'animated_cross_fade/index.dart';
 import 'animated_padding/index.dart';
 import 'animated_switcher/index.dart';
 import 'breathing_animation/index.dart';
+import 'controller/index.dart';
 import 'custom_drag_game/index.dart';
 import 'custom_painter/index.dart';
 import 'dismissible/index.dart';
@@ -33,6 +34,7 @@ import 'slivers_other/index.dart';
 import 'stream/index.dart';
 import 'tween_animation_builder/index.dart';
 import 'ultimate_drag_game/index.dart';
+import 'value_notifier/index.dart';
 
 List routerList = [
   {
@@ -174,5 +176,13 @@ List routerList = [
   {
     'name': 'SliversDemo',
     'method': const SliverDemo(),
+  },
+  {
+    'name': '控制器',
+    'method': const ControllerTest(),
+  },
+  {
+    'name': 'ValueNotifier',
+    'method': const ValueNotifierTest(),
   }
 ];
