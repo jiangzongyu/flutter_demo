@@ -13,11 +13,14 @@ import 'future/index.dart';
 import 'future_builder/index.dart';
 import 'grid_view/index.dart';
 import 'hero/index.dart';
+import 'inherited_widget/index.dart';
 import 'input_game/index.dart';
 import 'interlace_animation/index.dart';
 import 'list_view/index.dart';
 import 'list_wheel/index.dart';
 import 'page_view/index.dart';
+import 'provider/index.dart';
+import 'provider_implements/index.dart';
 import 'reorderable_list_view/index.dart';
 import 'rive/index.dart';
 import 'rotation_fade_opacity/index.dart';
@@ -184,5 +187,17 @@ List routerList = [
   {
     'name': 'ValueNotifier',
     'method': const ValueNotifierTest(),
+  },
+  {
+    'name': 'InheritedWidgetTest',
+    'method': const InheritedWidgetTest(),
+  },
+  {
+    'name': 'Provider',
+    'method': const ProviderTest(),
+  },
+  {
+    'name': 'Provider实现',
+    'method': const ProviderImplements(),
   }
 ];
