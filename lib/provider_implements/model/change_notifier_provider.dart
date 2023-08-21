@@ -16,10 +16,12 @@ class ChangeNotifierProvider<T extends Listenable> extends StatefulWidget {
 
   static T of<T>(BuildContext context, {required bool listen}) {
     if (listen) {
+      // 一直监听
       return context
           .dependOnInheritedWidgetOfExactType<_InheritedWidget<T>>()!
           .model;
     } else {
+      // 只执行一次
       return context
           .getInheritedWidgetOfExactType<_InheritedWidget<T>>()!
           .model;
