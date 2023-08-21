@@ -68,7 +68,7 @@ class _InheritedWidget<T> extends InheritedWidget {
   }
 }
 
-// 如果没有命名则只能在当前文件中使用（私有扩展），命名之后可以被其他文件使用
+// 如果没有命名 Consumer 则只能在当前文件中使用（私有扩展），命名之后可以被其他文件使用
 extension Consumer on BuildContext {
   T watch<T>() => ChangeNotifierProvider.of(this, listen: true);
 
